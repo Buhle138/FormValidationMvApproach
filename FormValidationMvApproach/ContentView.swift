@@ -7,10 +7,18 @@
 
 import SwiftUI
 
+struct LoginFormError{
+    var email: String = ""
+    var password: String = ""
+}
+
 struct ContentView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    //Login form error instance
+    @State private var loginFormError = LoginFormError() 
+    
     var isFormValid: Bool{
         return !email.isEmpty && !password.isEmpty && email.isValidEmail
     }
